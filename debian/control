@@ -17,6 +17,7 @@ Depends:
 Recommends:
  neovim-gruvbox,
  neovim-lualine,
+ neovim-nightfox,
  neovim-oil,
  neovim-web-devicons,
  neovim-which-key,
