@@ -1,3 +1,10 @@
+neovim-meta (0.2) resolute; urgency=medium
+
+  * Use terafox theme by default
+  * Allow ordering
+
+ -- Dimitry Ishenko <dimitry.ishenko@gmail.com>  Tue, 02 Dec 2025 19:01:42 -0500
+
 neovim-meta (0.1) resolute; urgency=medium
 
   * Initial import
