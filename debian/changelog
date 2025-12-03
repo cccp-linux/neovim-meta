@@ -1,3 +1,9 @@
+neovim-meta (0.3) resolute; urgency=medium
+
+  * d/control: fix architecture
+
+ -- Dimitry Ishenko <dimitry.ishenko@gmail.com>  Tue, 02 Dec 2025 19:05:03 -0500
+
 neovim-meta (0.2) resolute; urgency=medium
 
   * Use terafox theme by default
