@@ -10,7 +10,7 @@ Vcs-Browser: https://github.com/cccp-linux/neovim-meta
 Vcs-Git: https://github.com/cccp-linux/neovim-meta.git
 
 Package: neovim-meta
-Architecture: any
+Architecture: all
 Depends:
  ${misc:Depends},
  neovim,
