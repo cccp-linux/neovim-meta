@@ -19,6 +19,7 @@ Recommends:
  neovim-lualine,
  neovim-nightfox,
  neovim-oil,
+ neovim-statuscol,
  neovim-web-devicons,
  neovim-which-key,
 Description: Neovim meta-package
