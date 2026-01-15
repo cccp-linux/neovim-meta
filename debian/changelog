@@ -1,3 +1,9 @@
+neovim-meta (0.5) unstable; urgency=medium
+
+  * Use generic name
+
+ -- Dimitry Ishenko <dimitry.ishenko@gmail.com>  Thu, 15 Jan 2026 17:22:32 -0500
+
 neovim-meta (0.4) unstable; urgency=medium
 
   * d/control: depend on neovim-statuscol
