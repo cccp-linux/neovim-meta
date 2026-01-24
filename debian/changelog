@@ -1,3 +1,10 @@
+neovim-meta (0.6) unstable; urgency=medium
+
+  * init.lua: don't force system clipboard
+  * Update README
+
+ -- Dimitry Ishenko <dimitry.ishenko@gmail.com>  Fri, 23 Jan 2026 21:59:02 -0500
+
 neovim-meta (0.5) unstable; urgency=medium
 
   * Use generic name
