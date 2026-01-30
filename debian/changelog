@@ -1,3 +1,10 @@
+neovim-meta (0.7) unstable; urgency=medium
+
+  * README.md: update
+  * Add LICENSE.md
+
+ -- Dimitry Ishenko <dimitry.ishenko@gmail.com>  Thu, 29 Jan 2026 21:30:19 -0500
+
 neovim-meta (0.6) unstable; urgency=medium
 
   * init.lua: don't force system clipboard
