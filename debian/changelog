@@ -1,3 +1,10 @@
+neovim-meta (0.8) unstable; urgency=medium
+
+  * d/control: recommend neovim-blink-cmp
+  * Simplify names (use _ prefix for priority plugins)
+
+ -- Dimitry Ishenko <dimitry.ishenko@gmail.com>  Sat, 04 Apr 2026 22:30:44 -0400
+
 neovim-meta (0.7) unstable; urgency=medium
 
   * README.md: update
