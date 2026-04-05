@@ -3,6 +3,12 @@ vim.opt.completeopt = {"menu", "menuone", "noinsert"}
 vim.opt.cursorline = true
 vim.opt.cursorlineopt = "number"
 vim.opt.expandtab = true
+vim.opt.fillchars = {
+    foldclose= "",
+    foldopen = "",
+    foldsep  = "",
+}
+vim.opt.foldcolumn = "auto:1"
 vim.opt.hidden = true
 vim.opt.keywordprg = ":help"
 vim.opt.number = true
