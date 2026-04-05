@@ -15,6 +15,7 @@ Depends:
  ${misc:Depends},
  neovim,
 Recommends:
+ neovim-blink-cmp,
  neovim-gruvbox,
  neovim-lualine,
  neovim-nightfox,
