@@ -4,10 +4,11 @@ vim.opt.cursorline = true
 vim.opt.cursorlineopt = "number"
 vim.opt.expandtab = true
 vim.opt.fillchars = {
-    foldclose= "",
-    foldopen = "",
+    foldclose= "",
+    foldopen = "",
     foldsep  = "",
 }
+vim.opt.diffopt:append("foldcolumn:1")
 vim.opt.foldcolumn = "auto:1"
 vim.opt.hidden = true
 vim.opt.keywordprg = ":help"
