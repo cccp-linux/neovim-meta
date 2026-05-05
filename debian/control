@@ -16,6 +16,7 @@ Depends:
  neovim,
 Recommends:
  neovim-blink-cmp,
+ neovim-fzf-lua,
  neovim-gruvbox,
  neovim-lualine,
  neovim-oil,
