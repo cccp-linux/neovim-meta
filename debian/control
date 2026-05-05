@@ -18,7 +18,6 @@ Recommends:
  neovim-blink-cmp,
  neovim-gruvbox,
  neovim-lualine,
- neovim-nightfox,
  neovim-oil,
  neovim-statuscol,
  neovim-web-devicons,
