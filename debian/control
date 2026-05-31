@@ -18,10 +18,10 @@ Recommends:
  neovim-blink-cmp,
  neovim-gruvbox,
  neovim-lualine,
- neovim-nightfox,
  neovim-oil,
  neovim-statuscol,
  neovim-telescope-fzf-native | neovim-telescope,
+ neovim-tokyonight,
  neovim-web-devicons,
  neovim-which-key,
 Description: Neovim meta-package
