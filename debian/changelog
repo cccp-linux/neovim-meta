@@ -1,3 +1,9 @@
+neovim-meta (0.13) unstable; urgency=medium
+
+  * Telescope is in Debian
+
+ -- Dimitry Ishenko <dimitry.ishenko@gmail.com>  Sun, 31 May 2026 14:04:12 -0400
+
 neovim-meta (0.12) unstable; urgency=medium
 
   * d/control: recommend neovim-nightfox
