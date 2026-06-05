@@ -1,3 +1,9 @@
+neovim-meta (0.16) unstable; urgency=medium
+
+  * oil.lua: new oil.nvim needs explicit border
+
+ -- Dimitry Ishenko <dimitry.ishenko@gmail.com>  Thu, 04 Jun 2026 21:37:47 -0400
+
 neovim-meta (0.15) unstable; urgency=medium
 
   * telescope.lua: better config
