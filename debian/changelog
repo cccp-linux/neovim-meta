@@ -1,3 +1,10 @@
+neovim-meta (0.17) unstable; urgency=medium
+
+  * Add Debian release workflow
+  * d/control: which-key interferes with timeoutlen
+
+ -- Dimitry Ishenko <dimitry.ishenko@gmail.com>  Mon, 22 Jun 2026 12:30:08 -0400
+
 neovim-meta (0.16) unstable; urgency=medium
 
   * oil.lua: new oil.nvim needs explicit border
