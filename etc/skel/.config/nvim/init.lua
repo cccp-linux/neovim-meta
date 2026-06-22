@@ -20,6 +20,7 @@ vim.opt.signcolumn = "yes"
 vim.opt.smartindent = true
 vim.opt.splitright = true
 vim.opt.tabstop = 4
+vim.opt.timeoutlen = 500
 
 vim.api.nvim_create_autocmd("ColorScheme", {
     callback = function()
