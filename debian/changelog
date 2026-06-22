@@ -1,3 +1,9 @@
+neovim-meta (0.18) unstable; urgency=medium
+
+  * init.lua: decrease timeout
+
+ -- Dimitry Ishenko <dimitry.ishenko@gmail.com>  Mon, 22 Jun 2026 12:50:00 -0400
+
 neovim-meta (0.17) unstable; urgency=medium
 
   * Add Debian release workflow
