@@ -23,5 +23,4 @@ Recommends:
  neovim-telescope-fzf-native | neovim-telescope,
  neovim-tokyonight,
  neovim-web-devicons,
- neovim-which-key,
 Description: Neovim meta-package
