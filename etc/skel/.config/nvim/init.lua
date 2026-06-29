@@ -4,6 +4,7 @@ vim.opt.cursorline = true
 vim.opt.cursorlineopt = "number"
 vim.opt.expandtab = true
 vim.opt.fillchars = {
+    eob = "·",
     foldclose= "",
     foldopen = "",
     foldsep  = "",
