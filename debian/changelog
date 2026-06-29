@@ -1,3 +1,9 @@
+neovim-meta (0.19) unstable; urgency=medium
+
+  * init.lua: custom eob char
+
+ -- Dimitry Ishenko <dimitry.ishenko@gmail.com>  Mon, 29 Jun 2026 10:42:48 -0400
+
 neovim-meta (0.18) unstable; urgency=medium
 
   * init.lua: decrease timeout
