@@ -1,3 +1,17 @@
+neovim-meta (0.20) unstable; urgency=medium
+
+  * telescope.lua: symbol maps
+  * telescope.lua: activate fzf-native extension
+  * lualine.lua: show debug buttons
+  * _theme.lua: tweak colors
+  * init.lua: wordwrap map
+  * init.lua: clipboard yank maps
+  * init.lua: jk/kj maps
+  * init.lua: window navigation maps
+  * init.lua: tweak
+
+ -- Dimitry Ishenko <dimitry.ishenko@gmail.com>  Sat, 26 Sep 2026 13:12:00 -0400
+
 neovim-meta (0.19) unstable; urgency=medium
 
   * init.lua: custom eob char
