@@ -31,9 +31,14 @@ require("telescope").setup({
         find_files= { prompt_title = "Files",  preview_title = "Preview" },
         help_tags = { propmt_title = "Help",   preview_title = "Preview" },
         live_grep = { prompt_title = "Search", preview_title = "Preview" },
-        lsp_document_symbols = { prompt_title = "Symbols",   preview_title = "Preview" },
-        lsp_workspace_symbols= { prompt_title = "Workspace", preview_title = "Preview" },
         man_pages = { prompt_title = "Man",    preview_title = "Preview" },
+
+        lsp_document_symbols = {
+            prompt_title = "Symbols",
+            preview_title = "Preview",
+            symbols = { "Class", "Constructor", "Enum", "Function", "Interface", "Module", "Method", "Struct" }
+        },
+        lsp_workspace_symbols = { prompt_title = "Workspace", preview_title = "Preview" },
     },
 })
 require("telescope").load_extension("fzf")
