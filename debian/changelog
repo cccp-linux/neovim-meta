@@ -1,3 +1,11 @@
+neovim-meta (0.23) unstable; urgency=medium
+
+  * init.lua: activate jk/kj maps
+  * lualine.lua: fix
+  * Formatting
+
+ -- Dimitry Ishenko <dimitry.ishenko@gmail.com>  Sat, 26 Sep 2026 16:14:38 -0400
+
 neovim-meta (0.22) unstable; urgency=medium
 
   * telescope.lua: filter document symbols
