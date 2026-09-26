@@ -1,4 +1,4 @@
--- Basic options
+-- basic options
 vim.opt.completeopt = {"menu", "menuone", "noinsert"}
 vim.opt.cursorline = true
 vim.opt.cursorlineopt = "number"
@@ -30,7 +30,7 @@ vim.api.nvim_create_autocmd("ColorScheme", {
 })
 vim.fn.matchadd("TrailingWhitespace", "\\s\\+$")
 
--- Functions
+-- functions
 function create_alias(alias, cmd)
     vim.cmd(string.format(
         "cnoreabbrev <expr> %s getcmdtype() == ':' && getcmdline() ==# '%s' ? '%s' : '%s'",
@@ -89,7 +89,7 @@ function buffer_unload(opts)
     end
 end
 
--- Commands & aliases
+-- commands & aliases
 vim.api.nvim_create_autocmd("QuickFixCmdPost", {
     pattern = {"[Ll]*"},
     callback = function() vim.cmd("lwindow") end,
@@ -105,9 +105,9 @@ create_alias("bu", "Bunload")
 create_alias("wc", "w\\|wincmd c")
 create_alias("wd", "w\\|bd")
 
--- Basic maps
+-- basic maps
+map("n", "<leader>c", "<cmd>wincmd c<cr>")
 map("n", "<leader>d", "<cmd>bd<cr>")
-map("n", "<leader>c", "<C-w>c")
 map("n", "<leader>D", "<cmd>bd!<cr>")
 map("n", "<leader>l", toggle_loclist)
 map("n", "<leader>n", "<cmd>enew<cr>")
@@ -126,7 +126,7 @@ map("n", "]T", "<cmd>tablast<cr>")
 map("n", "zr", "<cmd>spellr<cr>")
 map("n", "<leader>z", "<cmd>setlocal spell! spell?<cr>")
 
--- Terminal
+-- terminal
 map("t", "<esc><esc>", "<c-\\><c-n>")
 
 vim.api.nvim_create_autocmd({"TermOpen", "BufEnter"}, {
@@ -138,7 +138,7 @@ vim.api.nvim_create_autocmd({"TermOpen", "BufEnter"}, {
     end
 })
 
--- Diagnostic
+-- diagnostics
 vim.diagnostic.config({
     signs = { text = {
         [vim.diagnostic.severity.ERROR] = "",
