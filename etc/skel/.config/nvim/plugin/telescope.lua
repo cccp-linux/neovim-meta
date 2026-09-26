@@ -4,11 +4,6 @@ end
 
 require("telescope").setup({
     defaults = {
-        borderchars = {
-            prompt  = { "─", "│", "─", "│", "╭", "╮", "┤", "├" },
-            results = { " ", "│", "─", "│", "│", "│", "╯", "╰" },
-            preview = { "─", "│", "─", "│", "╭", "╮", "╯", "╰" },
-        },
         layout_config = {
             horizontal = {
                 preview_width = 0.6,
@@ -33,6 +28,12 @@ require("telescope").setup({
             preview = false,
             results_title = "Ctrl+X to close buffer",
         },
+        find_files= { prompt_title = "Files",  preview_title = "Preview" },
+        help_tags = { propmt_title = "Help",   preview_title = "Preview" },
+        live_grep = { prompt_title = "Search", preview_title = "Preview" },
+        lsp_document_symbols = { prompt_title = "Symbols",   preview_title = "Preview" },
+        lsp_workspace_symbols= { prompt_title = "Workspace", preview_title = "Preview" },
+        man_pages = { prompt_title = "Man",    preview_title = "Preview" },
     },
 })
 require("telescope").load_extension("fzf")
