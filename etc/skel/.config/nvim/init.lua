@@ -106,6 +106,11 @@ create_alias("wc", "w\\|wincmd c")
 create_alias("wd", "w\\|bd")
 
 -- basic maps
+map({"n", "t"}, "<m-h>", "<cmd>wincmd h<cr>")
+map({"n", "t"}, "<m-j>", "<cmd>wincmd j<cr>")
+map({"n", "t"}, "<m-k>", "<cmd>wincmd k<cr>")
+map({"n", "t"}, "<m-l>", "<cmd>wincmd l<cr>")
+
 map("n", "<leader>c", "<cmd>wincmd c<cr>")
 map("n", "<leader>d", "<cmd>bd<cr>")
 map("n", "<leader>D", "<cmd>bd!<cr>")
