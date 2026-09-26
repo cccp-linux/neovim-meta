@@ -40,4 +40,4 @@ require("lualine").setup({
         lualine_a = { {"buffers", symbols = {modified = "+"}} },
         lualine_z = { {"tabs",    symbols = {modified = "+"}} }
     }
-}
+})
