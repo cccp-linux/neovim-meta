@@ -1,3 +1,9 @@
+neovim-meta (0.22) unstable; urgency=medium
+
+  * telescope.lua: filter document symbols
+
+ -- Dimitry Ishenko <dimitry.ishenko@gmail.com>  Sat, 26 Sep 2026 14:22:29 -0400
+
 neovim-meta (0.21) unstable; urgency=medium
 
   * telescope.lua: customize
