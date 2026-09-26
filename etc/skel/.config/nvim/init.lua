@@ -131,8 +131,8 @@ map("n", "]T", "<cmd>tablast<cr>")
 map("n", "zr", "<cmd>spellr<cr>")
 map("n", "<leader>z", "<cmd>setlocal spell! spell?<cr>")
 
--- map("i", "jk", "<esc>")
--- map("i", "kj", "<esc>")
+map("i", "jk", "<esc>")
+map("i", "kj", "<esc>")
 
 -- terminal
 map("t", "<esc><esc>", "<c-\\><c-n>")
