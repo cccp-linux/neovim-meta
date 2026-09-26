@@ -1,5 +1,5 @@
 -- basic options
-vim.opt.completeopt = {"menu", "menuone", "noinsert"}
+vim.opt.completeopt = { "menu", "menuone", "noinsert" }
 vim.opt.cursorline = true
 vim.opt.cursorlineopt = "number"
 vim.opt.expandtab = true
@@ -24,9 +24,7 @@ vim.opt.tabstop = 4
 vim.opt.timeoutlen = 500
 
 vim.api.nvim_create_autocmd("ColorScheme", {
-    callback = function()
-        vim.cmd("highlight TrailingWhitespace ctermbg=red guibg=red")
-    end
+    callback = function() vim.cmd("highlight TrailingWhitespace ctermbg=red guibg=red") end
 })
 vim.fn.matchadd("TrailingWhitespace", "\\s\\+$")
 
@@ -39,16 +37,16 @@ function create_alias(alias, cmd)
 end
 
 local function map(mode, lhs, rhs)
-    vim.keymap.set(mode, lhs, rhs, {noremap = true})
+    vim.keymap.set(mode, lhs, rhs, { noremap = true })
 end
 
 local function toggle_loclist()
-    local loc = vim.fn.getloclist(0, {winid = 0, size = 0})
+    local loc = vim.fn.getloclist(0, { winid = 0, size = 0 })
     vim.cmd((loc.winid > 0) and "lclose" or (loc.size > 0) and "lopen" or "echo 'No locations'")
 end
 
 local function toggle_quickfix()
-    local qf = vim.fn.getqflist({winid = 0})
+    local qf = vim.fn.getqflist({ winid = 0 })
     vim.cmd((qf.winid > 0) and "cclose" or "copen")
 end
 
@@ -64,7 +62,7 @@ function buffer_unload(opts)
                 if alt == -1 or alt == cur or not vim.api.nvim_buf_is_loaded(alt) then
                     alt = nil
 
-                    local bufs = vim.fn.getbufinfo({buflisted = 1, bufloaded = 1})
+                    local bufs = vim.fn.getbufinfo({ buflisted = 1, bufloaded = 1 })
                     table.sort(bufs, function(a, b) return a.lastused > b.lastused end)
 
                     for _, buf in ipairs(bufs) do
@@ -83,33 +81,31 @@ function buffer_unload(opts)
                 vim.api.nvim_win_set_buf(win, alt)
             end
         end
-        vim.api.nvim_buf_delete(cur, {force = true})
+        vim.api.nvim_buf_delete(cur, { force = true })
     else
-        vim.api.nvim_echo({{"Buffer is modified (use ! to override).", "WarningMsg"}}, true, {})
+        vim.api.nvim_echo({{ "Buffer is modified (use ! to override).", "WarningMsg" }}, true, { })
     end
 end
 
 -- commands & aliases
-vim.api.nvim_create_autocmd("QuickFixCmdPost", {
-    pattern = {"[Ll]*"},
+vim.api.nvim_create_autocmd("QuickFixCmdPost", { pattern = { "[Ll]*" },
     callback = function() vim.cmd("lwindow") end,
 })
-vim.api.nvim_create_autocmd("QuickFixCmdPost", {
-    pattern = {"[^Ll]*"},
+vim.api.nvim_create_autocmd("QuickFixCmdPost", { pattern = { "[^Ll]*" },
     callback = function() vim.cmd("cwindow") end,
 })
 
-vim.api.nvim_create_user_command("Bunload", buffer_unload, {bang = true})
+vim.api.nvim_create_user_command("Bunload", buffer_unload, { bang = true })
 create_alias("bu", "Bunload")
 
 create_alias("wc", "w\\|wincmd c")
 create_alias("wd", "w\\|bd")
 
 -- basic maps
-map({"n", "t"}, "<m-h>", "<cmd>wincmd h<cr>")
-map({"n", "t"}, "<m-j>", "<cmd>wincmd j<cr>")
-map({"n", "t"}, "<m-k>", "<cmd>wincmd k<cr>")
-map({"n", "t"}, "<m-l>", "<cmd>wincmd l<cr>")
+map({ "n", "t" }, "<m-h>", "<cmd>wincmd h<cr>")
+map({ "n", "t" }, "<m-j>", "<cmd>wincmd j<cr>")
+map({ "n", "t" }, "<m-k>", "<cmd>wincmd k<cr>")
+map({ "n", "t" }, "<m-l>", "<cmd>wincmd l<cr>")
 
 map("n", "<leader>c", "<cmd>wincmd c<cr>")
 map("n", "<leader>d", "<cmd>bd<cr>")
@@ -119,7 +115,7 @@ map("n", "<leader>n", "<cmd>enew<cr>")
 map("n", "<leader>q", toggle_quickfix)
 map("n", "<leader>s", "<cmd>sp<cr>")
 map("n", "<leader>u", buffer_unload)
-map("n", "<leader>U", function() buffer_unload({bang = true}) end)
+map("n", "<leader>U", function() buffer_unload({ bang = true }) end)
 map("n", "<leader>v", "<cmd>vs<cr>")
 map("n", "<leader>w", function() vim.wo.wrap = not vim.wo.wrap end)
 map("n", "<leader>y", "\"+y")
@@ -141,13 +137,9 @@ map("n", "<leader>z", "<cmd>setlocal spell! spell?<cr>")
 -- terminal
 map("t", "<esc><esc>", "<c-\\><c-n>")
 
-vim.api.nvim_create_autocmd({"TermOpen", "BufEnter"}, {
+vim.api.nvim_create_autocmd({ "TermOpen", "BufEnter" }, {
     pattern = "*",
-    callback = function()
-        if vim.bo.buftype == "terminal" then
-            vim.cmd("startinsert")
-        end
-    end
+    callback = function() if vim.bo.buftype == "terminal" then vim.cmd("startinsert") end end
 })
 
 -- diagnostics
