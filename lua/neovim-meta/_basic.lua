@@ -1,6 +1,10 @@
 -- basic options
+local function map(mode, lhs, rhs, opts)
+    vim.keymap.set(mode, lhs, rhs, opts)
+end
+
 vim.g.mapleader = " "
-vim.keymap.set({"n", "v"}, "<space>", "<nop>", {silent = true})
+map({ "n", "v" }, "<space>", "<nop>", { silent = true })
 
 vim.opt.completeopt = { "menu", "menuone", "noinsert" }
 vim.opt.cursorline = true
@@ -33,10 +37,6 @@ function create_alias(alias, cmd)
         "cnoreabbrev <expr> %s getcmdtype() == ':' && getcmdline() ==# '%s' ? '%s' : '%s'",
         alias, alias, cmd, alias
     ))
-end
-
-local function map(mode, lhs, rhs)
-    vim.keymap.set(mode, lhs, rhs, { noremap = true })
 end
 
 local function toggle_loclist()
