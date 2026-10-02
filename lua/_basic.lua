@@ -50,49 +50,53 @@ local function toggle_quickfix()
     vim.cmd((qf.winid > 0) and "cclose" or "copen")
 end
 
-function buffer_unload(opts)
-    local cur = vim.api.nvim_get_current_buf()
-    local new = nil
+function buffer_close(opts)
+    local cur = vim.fn.nvim_get_current_buf()
 
-    if opts and opts.bang or not vim.bo.modified then
-        for _, win in ipairs(vim.api.nvim_list_wins()) do
-            if vim.api.nvim_win_get_buf(win) == cur then
-                local alt = vim.api.nvim_win_call(win, function() return vim.fn.bufnr("#") end)
+    if not (opts and opts.bang) and vim.bo[cur].modified then
+        vim.notify("Buffer is modified (use ! to override).", vim.log.levels.WARN)
+        return
+    end
 
-                if alt == -1 or alt == cur or not vim.api.nvim_buf_is_loaded(alt) then
-                    alt = nil
+    local new
+    for _, win in ipairs(vim.api.win_findbuf(cur)) do
+        local prev = vim.api.nvim_win_call(win, function() return vim.fn.bufnr("#") end)
 
-                    local bufs = vim.fn.getbufinfo({ buflisted = 1, bufloaded = 1 })
-                    table.sort(bufs, function(a, b) return a.lastused > b.lastused end)
+        if prev == -1 or prev == cur or not vim.api.nvim_buf_is_loaded(prev) then
+            prev = nil
 
-                    for _, buf in ipairs(bufs) do
-                        if buf.bufnr ~= cur then
-                            alt = buf.bufnr
-                            break
-                        end
-                    end
+            local loaded = vim.fn.getbufinfo({ buflisted = 1, bufloaded = 1 })
+            table.sort(loaded, function(a, b) return a.lastused > b.lastused end)
 
-                    if not alt then
-                        if not new then new = vim.api.nvim_create_buf(true, false) end
-                        alt = new
-                    end
+            for _, buf in ipairs(loaded) do
+                if buf.bufnr ~= cur then
+                    prev = buf.bufnr
+                    break
                 end
+            end
 
-                vim.api.nvim_win_set_buf(win, alt)
+            if not prev then
+                new = new or vim.api.nvim_create_buf(true, false)
+                prev = new
             end
         end
-        vim.api.nvim_buf_delete(cur, { force = true })
-    else
-        vim.api.nvim_echo({{ "Buffer is modified (use ! to override).", "WarningMsg" }}, true, { })
+
+        pcall(vim.api.nvim_win_set_buf, win, prev)
     end
+
+    if vim.api.nvim_buf_is_valid(cur) then
+        vim.api.nvim_buf_delete(cur, { force = true, unload = true })
+    end
+    if vim.api.nvim_buf_is_valid(cur) then vim.bo[cur].buflisted = false end
 end
 
 -- commands & aliases
-vim.api.nvim_create_user_command("Bunload", buffer_unload, { bang = true })
-create_alias("bu", "Bunload")
+vim.api.nvim_create_user_command("Bclose", buffer_close, { bang = true })
+create_alias("bx", "Bclose")
 
 create_alias("wc", "w\\|wincmd c")
 create_alias("wd", "w\\|bd")
+create_alias("wx", "w\\|Bclose")
 
 -- basic maps
 map({ "n", "t" }, "<m-h>", "<cmd>wincmd h<cr>")
@@ -107,10 +111,10 @@ map("n", "<leader>l", toggle_loclist)
 map("n", "<leader>n", "<cmd>enew<cr>")
 map("n", "<leader>q", toggle_quickfix)
 map("n", "<leader>s", "<cmd>sp<cr>")
-map("n", "<leader>u", buffer_unload)
-map("n", "<leader>U", function() buffer_unload({ bang = true }) end)
 map("n", "<leader>v", "<cmd>vs<cr>")
 map("n", "<leader>w", function() vim.wo.wrap = not vim.wo.wrap end)
+map("n", "<leader>x", buffer_close)
+map("n", "<leader>X", function() buffer_close({ bang = true }) end)
 map("n", "<leader>y", "\"+y")
 map("v", "<leader>y", "\"+y")
 map("n", "<leader>Y", "\"+Y")
@@ -137,10 +141,10 @@ vim.api.nvim_create_autocmd({ "TermOpen", "BufEnter" }, { pattern = "*",
 -- diagnostics
 vim.diagnostic.config({
     signs = { text = {
-        [vim.diagnostic.severity.ERROR] = "",
-        [vim.diagnostic.severity.WARN ] = "",
-        [vim.diagnostic.severity.INFO ] = "",
-        [vim.diagnostic.severity.HINT ] = "",
+        [ vim.diagnostic.severity.ERROR ] = "",
+        [ vim.diagnostic.severity.WARN  ] = "",
+        [ vim.diagnostic.severity.INFO  ] = "",
+        [ vim.diagnostic.severity.HINT  ] = "",
     },
     severity_sort = true,
 }})
