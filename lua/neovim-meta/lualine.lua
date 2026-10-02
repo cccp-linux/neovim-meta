@@ -1,12 +1,11 @@
 local function debug_button(icon, cmd, hl_name, is_last)
-
-    local hl = vim.api.nvim_get_hl(0, {name = hl_name, link = false})
-    hl = string.format("#%06x", hl.fg or 0x999999)
-
     return {
         function() return icon end,
         cond = function() return vim.g.termdebug_is_running end,
-        color = { fg = hl },
+        color = function()
+            local hl = vim.api.nvim_get_hl(0, { name = hl_name, link = false })
+            return { fg = string.format("#%06x", hl.fg or 0x999999) }
+        end,
         on_click = function() vim.cmd(cmd) end,
         separator = "",
         padding = { left = 1, right = is_last and 1 or 0 },
