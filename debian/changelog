@@ -1,3 +1,9 @@
+neovim-meta (0.25) unstable; urgency=medium
+
+  * theme.lua: configure tokyonight
+
+ -- Dimitry Ishenko <dimitry.ishenko@gmail.com>  Fri, 02 Oct 2026 01:23:30 -0400
+
 neovim-meta (0.24) unstable; urgency=medium
 
   * basic.lua: use space as leader
