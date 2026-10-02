@@ -1,3 +1,14 @@
+neovim-meta (0.24) unstable; urgency=medium
+
+  * basic.lua: use space as leader
+  * basic.lua: fix diagnostics
+  * basic.lua: fix buffer_close
+  * basic.lua: show trailing dot
+  * basic.lua: buffer_unload => buffer_close
+  * Convert into neovim addon
+
+ -- Dimitry Ishenko <dimitry.ishenko@gmail.com>  Fri, 02 Oct 2026 01:19:28 -0400
+
 neovim-meta (0.23) unstable; urgency=medium
 
   * init.lua: activate jk/kj maps
