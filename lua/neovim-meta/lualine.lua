@@ -17,13 +17,13 @@ require("lualine").setup({
     options = {
         globalstatus = true,
     },
-    sections= {
+    sections = {
         lualine_b = {
-            {"branch", icon = "󰊢"},
-            {"diff", symbols = {modified = "≠"}},
-            {"diagnostics", symbols = {error = " ", warn = " ", info = " ", hint = " "}}
+            { "branch", icon = "󰊢" },
+            { "diff", symbols = { modified = "≠" } },
+            { "diagnostics", symbols = { error = " ", warn = " ", info = " ", hint = " " } }
         },
-        lualine_c = { {"filename", symbols = {modified= "+", readonly= "󰍁"}} },
+        lualine_c = { { "filename", symbols = { modified = "+", readonly = "󰍁" } } },
         lualine_x = {
             debug_button("", "Continue", "DiagnosticOk"),
             debug_button("", "Over",   "DiagnosticInfo"),
@@ -37,7 +37,7 @@ require("lualine").setup({
         }
     },
     tabline = {
-        lualine_a = { {"buffers", symbols = {modified = "+"}} },
-        lualine_z = { {"tabs",    symbols = {modified = "+"}} }
+        lualine_a = { { "buffers", symbols = { modified = "+" } } },
+        lualine_z = { { "tabs",    symbols = { modified = "+" } } }
     }
 })
