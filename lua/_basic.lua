@@ -47,7 +47,7 @@ local function toggle_quickfix()
 end
 
 function buffer_close(opts)
-    local cur = vim.fn.nvim_get_current_buf()
+    local cur = vim.api.nvim_get_current_buf()
 
     if not (opts and opts.bang) and vim.bo[cur].modified then
         vim.notify("Buffer is modified (use ! to override).", vim.log.levels.WARN)
@@ -55,7 +55,7 @@ function buffer_close(opts)
     end
 
     local new
-    for _, win in ipairs(vim.api.win_findbuf(cur)) do
+    for _, win in ipairs(vim.fn.win_findbuf(cur)) do
         local prev = vim.api.nvim_win_call(win, function() return vim.fn.bufnr("#") end)
 
         if prev == -1 or prev == cur or not vim.api.nvim_buf_is_loaded(prev) then
