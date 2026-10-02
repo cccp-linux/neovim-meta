@@ -14,6 +14,7 @@ Package: neovim-meta
 Architecture: all
 Depends:
  ${misc:Depends},
+ ${vim-addon:Depends},
  neovim,
 Recommends:
  neovim-blink-cmp,
