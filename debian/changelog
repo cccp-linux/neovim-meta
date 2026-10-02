@@ -1,3 +1,15 @@
+neovim-meta (0.29) unstable; urgency=medium
+
+  * basic.lua: tweak
+  * blink-cmp.lua: formatting
+  * lualine: dymanic button color
+  * lualine.lua: formatting
+  * oil.lua: clean up
+  * statuscol.lua: formatting
+  * telescope.lua: clean up
+
+ -- Dimitry Ishenko <dimitry.ishenko@gmail.com>  Fri, 02 Oct 2026 17:09:52 -0400
+
 neovim-meta (0.28) unstable; urgency=medium
 
   * d/control: add missing dep
