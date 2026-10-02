@@ -1,5 +1,6 @@
-require("neovim-meta._basic")
-require("neovim-meta._theme")
+require("neovim-meta.basic")
+require("neovim-meta.theme")
+
 require("neovim-meta.blink-cmp")
 require("neovim-meta.lualine")
 require("neovim-meta.oil")
