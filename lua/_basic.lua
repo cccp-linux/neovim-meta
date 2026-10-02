@@ -11,8 +11,9 @@ vim.opt.fillchars = {
 }
 vim.opt.diffopt:append("foldcolumn:1")
 vim.opt.foldcolumn = "auto:1"
-vim.opt.hidden = true
 vim.opt.keywordprg = ":help"
+vim.opt.list = true
+vim.opt.listchars = { tab = "  ", trail = "·" }
 vim.opt.number = true
 vim.opt.numberwidth = 3
 vim.opt.relativenumber = true
@@ -22,11 +23,6 @@ vim.opt.smartindent = true
 vim.opt.splitright = true
 vim.opt.tabstop = 4
 vim.opt.timeoutlen = 500
-
-vim.api.nvim_create_autocmd("ColorScheme", {
-    callback = function() vim.cmd("highlight TrailingWhitespace ctermbg=red guibg=red") end
-})
-vim.fn.matchadd("TrailingWhitespace", "\\s\\+$")
 
 -- functions
 function create_alias(alias, cmd)
