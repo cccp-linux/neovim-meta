@@ -9,4 +9,12 @@ require("gruvbox").setup({
         SignColumn = { bg = "NONE" }
     }
 })
+
+require("tokyonight").setup({
+    styles = {
+        comments = { italic = false },
+        keywords = { italic = false },
+    }
+})
+
 vim.cmd("colorscheme gruvbox")
