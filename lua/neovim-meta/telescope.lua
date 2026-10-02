@@ -1,8 +1,6 @@
-local function map(mode, lhs, rhs)
-    vim.keymap.set(mode, lhs, rhs, {noremap = true})
-end
+local telescope = require("telescope")
 
-require("telescope").setup({
+telescope.setup({
     defaults = {
         layout_config = {
             horizontal = {
@@ -28,10 +26,10 @@ require("telescope").setup({
             preview = false,
             results_title = "Ctrl+X to close buffer",
         },
-        find_files= { prompt_title = "Files",  preview_title = "Preview" },
-        help_tags = { propmt_title = "Help",   preview_title = "Preview" },
-        live_grep = { prompt_title = "Search", preview_title = "Preview" },
-        man_pages = { prompt_title = "Man",    preview_title = "Preview" },
+        find_files = { prompt_title = "Files",  preview_title = "Preview" },
+        help_tags  = { prompt_title = "Help",   preview_title = "Preview" },
+        live_grep  = { prompt_title = "Search", preview_title = "Preview" },
+        man_pages  = { prompt_title = "Man",    preview_title = "Preview" },
 
         lsp_document_symbols = {
             prompt_title = "Symbols",
@@ -41,9 +39,15 @@ require("telescope").setup({
         lsp_workspace_symbols = { prompt_title = "Workspace", preview_title = "Preview" },
     },
 })
-require("telescope").load_extension("fzf")
+
+pcall(telescope.load_extension, "fzf")
 
 local builtin = require("telescope.builtin")
+
+local function map(mode, lhs, rhs)
+    vim.keymap.set(mode, lhs, rhs)
+end
+
 map("n", "<leader>fb", builtin.buffers)
 map("n", "<leader>ff", builtin.find_files)
 map("n", "<leader>fg", builtin.live_grep)
