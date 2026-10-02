@@ -1,3 +1,9 @@
+neovim-meta (0.28) unstable; urgency=medium
+
+  * d/control: add missing dep
+
+ -- Dimitry Ishenko <dimitry.ishenko@gmail.com>  Fri, 02 Oct 2026 12:21:37 -0400
+
 neovim-meta (0.27) unstable; urgency=medium
 
   * Fix plugin structure
