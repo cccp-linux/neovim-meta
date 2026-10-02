@@ -1,4 +1,7 @@
 -- basic options
+vim.g.mapleader = " "
+vim.keymap.set({"n", "v"}, "<space>", "<nop>", {silent = true})
+
 vim.opt.completeopt = { "menu", "menuone", "noinsert" }
 vim.opt.cursorline = true
 vim.opt.cursorlineopt = "number"
