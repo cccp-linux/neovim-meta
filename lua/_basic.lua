@@ -88,13 +88,6 @@ function buffer_unload(opts)
 end
 
 -- commands & aliases
-vim.api.nvim_create_autocmd("QuickFixCmdPost", { pattern = { "[Ll]*" },
-    callback = function() vim.cmd("lwindow") end,
-})
-vim.api.nvim_create_autocmd("QuickFixCmdPost", { pattern = { "[^Ll]*" },
-    callback = function() vim.cmd("cwindow") end,
-})
-
 vim.api.nvim_create_user_command("Bunload", buffer_unload, { bang = true })
 create_alias("bu", "Bunload")
 
@@ -137,8 +130,7 @@ map("i", "kj", "<esc>")
 -- terminal
 map("t", "<esc><esc>", "<c-\\><c-n>")
 
-vim.api.nvim_create_autocmd({ "TermOpen", "BufEnter" }, {
-    pattern = "*",
+vim.api.nvim_create_autocmd({ "TermOpen", "BufEnter" }, { pattern = "*",
     callback = function() if vim.bo.buftype == "terminal" then vim.cmd("startinsert") end end
 })
 

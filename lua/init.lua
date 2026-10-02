@@ -1,0 +1,7 @@
+require("neovim-meta._basic")
+require("neovim-meta._theme")
+require("neovim-meta.blink-cmp")
+require("neovim-meta.lualine")
+require("neovim-meta.oil")
+require("neovim-meta.statuscol")
+require("neovim-meta.telescope")
