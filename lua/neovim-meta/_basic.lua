@@ -83,7 +83,7 @@ function buffer_close(opts)
         pcall(vim.api.nvim_win_set_buf, win, prev)
     end
 
-    if vim.api.nvim_buf_is_valid(cur) then
+    if vim.api.nvim_buf_is_valid(cur) and vim.api.nvim_buf_is_loaded(cur) then
         vim.api.nvim_buf_delete(cur, { force = true, unload = true })
     end
     if vim.api.nvim_buf_is_valid(cur) then vim.bo[cur].buflisted = false end
