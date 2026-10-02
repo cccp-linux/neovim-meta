@@ -1,3 +1,10 @@
+neovim-meta (0.30) unstable; urgency=medium
+
+  * Don't need underscores anymore
+  * basic.lua: fix for scratch buffers
+
+ -- Dimitry Ishenko <dimitry.ishenko@gmail.com>  Fri, 02 Oct 2026 18:53:17 -0400
+
 neovim-meta (0.29) unstable; urgency=medium
 
   * basic.lua: tweak
