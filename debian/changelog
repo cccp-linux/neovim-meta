@@ -1,3 +1,9 @@
+neovim-meta (0.32) unstable; urgency=medium
+
+  * Add install blurb
+
+ -- Dimitry Ishenko <dimitry.ishenko@gmail.com>  Sat, 03 Oct 2026 16:00:12 -0400
+
 neovim-meta (0.31) unstable; urgency=medium
 
   * neovim-meta => neovim
