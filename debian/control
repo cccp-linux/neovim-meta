@@ -26,3 +26,5 @@ Recommends:
  neovim-tokyonight,
  neovim-web-devicons,
 Description: Neovim meta-package
+ Add the following to your .config/nvim/init.lua:
+ * require("neovim")
