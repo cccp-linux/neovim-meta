@@ -1,3 +1,9 @@
+neovim-meta (0.34) unstable; urgency=medium
+
+  * Don't change sign column colors
+
+ -- Dimitry Ishenko <dimitry.ishenko@gmail.com>  Thu, 29 Oct 2026 10:25:01 -0400
+
 neovim-meta (0.33) unstable; urgency=medium
 
   * Install init.lua stub
