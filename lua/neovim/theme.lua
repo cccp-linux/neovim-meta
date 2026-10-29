@@ -6,7 +6,6 @@ require("gruvbox").setup({
         LspReferenceRead  = { bg = palette.dark2 },
         LspReferenceText  = { bg = palette.dark2 },
         LspReferenceWrite = { bg = palette.dark2 },
-        SignColumn = { bg = "NONE" }
     }
 })
 
